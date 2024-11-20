@@ -1,0 +1,513 @@
+body{
+    margin: 0;
+    font-family:'Roboto', sans-serif;
+    background-color: white;
+}
+
+/*Encabezado*/
+header {
+    background-image: url('/img/fondo.png');
+    background-size: cover;
+    background-position: center;
+    background-color: white;
+    text-align: center;
+    position: fixed;
+    top: 0;         
+    width: 100%;
+    z-index: 998;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.85);
+    z-index: -1;
+}
+/* Estilos generales para el header */
+header {
+    background-image: url('/img/fondo.png');
+    background-size: cover; /* Se adapta a pantallas grandes */
+    background-position: center;
+    background-color: white;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 998;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Sección antes del contenido (filtro de color) */
+header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.85);
+    z-index: -1;
+}
+
+/*Logo principal*/
+.logo img{
+    max-width: 180PX;
+}
+
+/*Barra de accesos*/
+nav{
+    margin: 0;
+    display: flex;
+    background-color: #1a3571;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+}
+
+nav a{
+    color: white;
+    text-decoration: none;
+    padding: 12px;
+}
+
+nav a:hover{
+    font-size: 18px;
+}
+
+/*Botones*/
+button{
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 30px;
+    border-radius: 5px;
+    border: 1px solid rgb(0,0,0.5);
+    color: white;
+    background-color: #1a3571;
+}
+
+/* Titulo principal*/
+h1 {
+    position: relative;
+    z-index: 1;
+}
+
+/*Seccion de citas*/
+#cita {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 90vh;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    margin-top: 100px;
+}
+
+.citas .boton-citas {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+.boton-citas:hover{
+    font-size: 17px;
+}
+
+.slider-frame {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: slide 30s infinite ease-in-out;
+}
+
+.slider-frame ul {
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+
+.slider-frame li {
+    list-style: none;
+    flex-shrink: 0;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.slider-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.slider-frame li::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+    z-index: 1; 
+}
+
+@keyframes slide {
+    0% { transform: translateX(0); }
+    16% { transform: translateX(0); }
+
+    20% { transform: translateX(-100%); }
+    36% { transform: translateX(-100%); }
+
+    40% { transform: translateX(-200%); }
+    56% { transform: translateX(-200%); }
+
+    60% { transform: translateX(-300%); }
+    76% { transform: translateX(-300%); }
+
+    80% { transform: translateX(-400%); }
+    96% { transform: translateX(-400%); }
+
+    99% { transform: translateX(-500%); }
+    100% { transform: translateX(0); }
+}
+
+/* Formulario de citas */
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 999;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    justify-content: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 400px;
+    min-height: 550px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000; 
+    padding: 20px;
+}
+
+/* Si quieres que el fondo detrás del modal tenga un color más claro */
+.modal::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.5);
+    z-index: -1; 
+}
+
+.modal h1 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 5px;
+    color: black;
+}
+
+.modal form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.campo input {
+    width: 100%;
+    max-width: 800px;
+    padding: 12px;
+    font-size: 16px;
+    height: 25px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.campo label {
+    display: block;
+    font-size: 14px;
+    color: black;
+    margin-bottom: 5px;
+}
+
+.campo input {
+    width: 100%;
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 30px;
+    cursor: pointer;
+    color: black;
+}
+
+/* Sección quienes somos */
+#nosotros {
+    text-align: center;
+}
+
+#nosotros h1 {
+    padding-top: 10px;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.divisoria {
+    border: none;
+    height: 100px;
+    background-color: #1a3571; 
+    margin: 20px 0; 
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.content .left,
+.content .center,
+.content .right {
+    flex: 1;
+}
+
+.content img {
+    width: 100%;
+    height: auto;
+    max-width: 300px;
+    display: block;
+}
+
+.content p {
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: justify;
+}
+
+.content iframe {
+    width: 100%;
+    height: auto;
+    max-width: 400px;
+}
+
+/* Nuestro equipo */
+.equipo {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px; 
+}
+
+.equipo h1 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+.miembros {
+    text-align: center;
+    background: #f9f9f9;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.miembros img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 3px solid #e0e0e0;
+}
+
+.miembros h3 {
+    font-size: 1.25rem;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.miembros p {
+    color: #666;
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+/* Sección servicios */
+#servicios {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 150px;
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#servicios h2 {
+    font-size: 30px;
+    margin-top: 0;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.portafolio {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.serv {
+    flex: 1 1 calc(33.333% - 20px);
+    box-sizing: border-box;
+    border: 1px solid #1a3571;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+.serv h3 {
+    margin-bottom: 10px;
+}
+.serv img {
+    width: 50%; 
+    height: auto;
+    margin-bottom: 10px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: opacity 0.3s ease;
+}
+
+.serv p {
+    margin: 20px;
+    text-align: justify;
+    color: white;
+    margin-bottom: 15px;
+}
+
+.serv:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.serv-container{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    opacity: 0;
+    transition: 0.6s;
+}
+
+.serv-container:hover{
+    opacity: 1;
+}
+
+.serv-container > *{
+    transform: translateY(25px);
+    transition: transform 0.6s;
+}
+.serv-container:hover > *{
+    transform: translateY(0px);
+}
+
+/* Pie de pagina */
+.footer {
+    background-color: #1a3571;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 800px;
+    margin: auto;
+}
+
+.footer h3 {
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+}
+
+.footer p {
+    margin: 5px 0;
+    font-size: 1rem;
+}
+
+.footer a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+.social-links {
+    margin: 20px 0;
+}
+
+.social-links a {
+    margin-right: 15px;
+}
+
+.social-links img {
+    width: 30px;
+    height: 30px;
+    vertical-align: middle;
+}
+
+.footer-copy {
+    font-size: 0.9rem;
+    margin-top: 10px;
+}
+

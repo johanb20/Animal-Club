@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD de Citas</title>
+    <link rel="stylesheet" href="style-Crud.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="/img/logo.png" alt="Logo Animal Club">
+        </div>
+        <nav> 
+            <h1>CRUD de Citas</h1>
+        </nav>
+    </header>
+    
+
+    <!-- Formulario para agregar nuevos clientes -->
+    <form id="clienteForm">
+        <div class="campo">
+            <label for="nombre">Nombres:</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Ingrese sus nombres" required>
+        </div>
+        <div class="campo">
+            <label for="apellido">Apellidos:</label>
+            <input type="text" id="apellido" name="apellido" placeholder="Ingrese sus apellidos" required>
+        </div>
+        <div class="campo">
+            <label for="telefono">Teléfono:</label>
+            <input type="tel" id="telefono" name="telefono" placeholder="Ingrese su teléfono" required>
+        </div>
+        <div class="campo">
+            <label for="direccion">Dirección:</label>
+            <input type="text" id="direccion" name="direccion" placeholder="Ingrese su dirección" required>
+        </div>
+        <div class="campo">
+            <label for="mascota">Nombre de la mascota:</label>
+            <input type="text" id="mascota" name="mascota" placeholder="Ingrese nom. mascota" required>
+        </div>
+        <div class="campo">
+            <label for="servicio">Servicio:</label>
+            <select id="servicio" name="servi">
+                <option value="consulta-general">Consulta General</option>
+                <option value="consulta-domiciliaria">Consulta Domiciliaria</option>
+                <option value="atencion-urgencias">Atención de Urgencias</option>
+                <option value="hospitalizacion-24h">Hospitalización 24 horas</option>
+                <option value="laboratorio-clinico">Laboratorio Clínico Diagnóstico</option>
+                <option value="rayos-x-ecografia">Rayos X y Ecografía</option>
+                <option value="cirugia-ortopedica">Cirugía Ortopédica</option>
+                <option value="cirugia-general">Cirugía General y Especializada</option>
+                <option value="vacunacion">Vacunación</option>
+                <option value="desparasitacion">Desparasitación</option>
+                <option value="spa-canino-felino">Spa Canino y Felino</option>
+                <option value="guarderia">Guardería</option>
+            </select>
+        </div>
+        <button type="submit">Agregar Cita</button>
+    </form>
+
+    <!-- Tabla para listar los clientes -->
+    <table id="clientesTable">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Teléfono</th>
+                <th>Dirección</th>
+                <th>Mascota</th>
+                <th>Servicio</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody></tbody> 
+    </table>
+
+    <script src="script.js"></script> 
+</body>
+</html>
