@@ -65,11 +65,39 @@ button{
     background-color: #1a3571;
 }
 
+
 /* Titulo principal*/
 h1 {
     position: relative;
     z-index: 1;
 }
+
+
+
+@media (max-width: 768px) {
+    header {
+        background-size: 200%; /* Ajustar fondo a pantallas pequeñas */
+    }
+
+    /* Reducción del logo */
+    .logo img {
+        max-width: 150px;
+    }
+
+    /* Menú en columna para pantallas pequeñas */
+    nav {
+
+        flex-direction: column;
+        height: auto; /* Ajustar altura automática */
+        padding: 0px;
+    }
+    nav a {
+        padding: 3px;
+        font-size: 15px;
+    }
+
+}
+
 
 /*Seccion de citas*/
 #cita {
@@ -187,7 +215,6 @@ h1 {
     padding: 20px;
 }
 
-/* Si quieres que el fondo detrás del modal tenga un color más claro */
 .modal::before {
     content: '';
     position: fixed;
@@ -299,6 +326,34 @@ h1 {
     max-width: 400px;
 }
 
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column; /* Apilar columnas */
+        align-items: center;
+        text-align: center; /* Centrar texto */
+    }
+
+    .content .left,
+    .content .center,
+    .content .right {
+        max-width: 100%; /* Usar todo el ancho */
+    }
+
+    .content img {
+        max-width: 200px;
+    }
+
+    .content p {
+        max-width: 90%; /* Ajustar texto al ancho disponible */
+    }
+
+    .content iframe {
+        max-width: 90%; /* Ajustar iframe */
+    }
+}
+
+
+
 /* Nuestro equipo */
 .equipo {
     max-width: 1200px;
@@ -346,6 +401,47 @@ h1 {
     font-size: 0.95rem;
     margin: 0;
 }
+
+/* Ubicacion */
+
+.ubicación {
+    text-align: center;
+    padding: 20px;
+}
+
+.ubicación h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+/* Hacer el iframe responsive */
+.ubicación iframe {
+    width: 100%; /* Ocupa el 100% del ancho del contenedor */
+    max-width: 600px; /* Limita el tamaño máximo en pantallas grandes */
+    height: 300px; /* Altura proporcional */
+    border: 0;
+    margin: 0 auto; /* Centrar el iframe */
+    display: block; /* Asegurar que se comporte como un bloque */
+}
+
+
+@media (min-width: 768px) {
+    .ubicación iframe {
+        height: 450px; /* Ajustar altura en pantallas más grandes */
+    }
+}
+
+@media (max-width: 480px) {
+    .ubicación h1 {
+        font-size: 1.5em; /* Reducir el tamaño del título */
+    }
+
+    .ubicación iframe {
+        height: 250px; /* Ajustar altura para dispositivos pequeños */
+    }
+}
+
+
 
 /* Sección servicios */
 #servicios {
@@ -434,6 +530,30 @@ h1 {
 .serv-container:hover > *{
     transform: translateY(0px);
 }
+
+@media (max-width: 768px) {
+    #servicios {
+        padding: 200px 5px;
+        
+    }
+    .portafolio {
+    padding-right: 20PX;
+    padding-left: 20PX;
+    }
+    
+    .serv {
+        flex: 1 1 100%; /* Una columna */
+    }
+
+    .serv img {
+        width: 60%;
+    }
+
+    #servicios h2 {
+        font-size: 1.8em; /* Reducir tamaño del título */
+    }
+}
+
 
 /* Pie de pagina */
 .footer {
